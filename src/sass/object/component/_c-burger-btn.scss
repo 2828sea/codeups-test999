@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.c-burger-menu {
+  position: absolute;
+  right: rem(22);
+  height: inherit;
+  width: rem(24);
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.c-burger-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  width: 100%;
+  height: rem(12.95);
+  cursor: pointer;
+}
+
+.c-burger-btn span {
+  display: inline-block;
+  transition: all .3s;
+  position: absolute;
+  width: 100%;
+  height: rem(2);
+  border-radius: rem(2);
+  background-color: $white;
+  transition: all .3s;
+}
+
+.c-burger-btn.open {
+  width: rem(14.7);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.c-burger-btn.open span {
+  height: rem(1);
+}
+
+.c-burger-btn span:nth-of-type(1) {
+  top: 0;
+}
+.c-burger-btn span:nth-of-type(2) {
+  top: 50%;
+  // transform: translateY(-50%);
+}
+.c-burger-btn span:nth-of-type(3) {
+  bottom: 0;
+}
+.c-burger-btn.open span:nth-of-type(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.c-burger-btn.open span:nth-of-type(2) {
+  opacity: 0;
+}
+.c-burger-btn.open span:nth-of-type(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}

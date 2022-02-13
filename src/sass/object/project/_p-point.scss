@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.p-point__title {
+  border: 1px solid $white;
+  display: inline-block;
+  padding: rem(8) rem(24);
+  font-size: rem(20);
+  border-radius: rem(32);
+  background-color: $black;
+  margin-left: rem(24);
+}
+
+.p-point__text {
+  border: 1px solid $white;
+  line-height: 2.1875;
+  letter-spacing: 0.4px;
+  padding: rem(56) rem(10) rem(33);
+  margin-top: rem(-23);
+}
+
+.p-point + .p-point {
+  margin-top: rem(32);
+}

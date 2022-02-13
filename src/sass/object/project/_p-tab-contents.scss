@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.p-tab-contents__item {
+  margin-top: rem(24);
+  @include mq(md){
+    margin-top: 0;
+  }
+}
+
+
+
+
+.p-tab-contents {
+  // position: relative;
+  display: none;
+  opacity: 0;
+}
+
+.p-tab-contents.show {
+  display: block;
+  animation-name: displayAnime;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.p-tab-contents__box {
+  margin: 0 rem(-20);
+  @include mq(md){
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(40);
+  }
+}

@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.p-page-top {
+  width: rem(45);
+  height: rem(45);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: rem(41);
+  right: rem(21);
+  padding-top: rem(12);
+  @include mq(md) {
+    bottom: rem(31);
+    right: calc(50% - #{rem(618)});
+    transition: all 0.3s;
+  }
+}
+
+.p-page-top:hover {
+  @include mq(md){
+    background-color: #333;
+    transition: background-color 0.3s;
+  }
+}
+
+.p-page-top span {
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  width: rem(20);
+  height: rem(20);
+  transform: rotate(45deg);
+}
+
+.p-page-top:hover span {
+  @include mq(md){
+    border-color: #fff;
+    transform: all 0.3s;
+  }
+}

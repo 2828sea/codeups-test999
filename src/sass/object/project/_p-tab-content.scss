@@ -1,0 +1,70 @@
+@use "global" as *;
+
+
+
+.p-tab-content {
+  position: relative;
+  max-width: rem(600);
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(md){
+    max-width: calc(50% - #{rem(48)} / 2);
+  }
+}
+
+.p-tab-content + .p-tab-content {
+  margin-top: rem(48);
+  @include mq(md){
+    margin-top: 0;
+  }
+}
+
+.p-tab-content:nth-child(n + 3) {
+  @include mq(md){
+    margin-top: rem(114);
+  }
+}
+
+.p-tab-content:nth-child(even) {
+  @include mq(md){
+    margin-left: rem(48);
+  }
+}
+
+.p-tab-content__img {
+  position: relative;
+  width: 100%;
+}
+
+.p-tab-content__img::before {
+  content: "";
+  padding-top: 66.4%;
+  display: block;
+}
+
+.p-tab-content__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-tab-content__title {
+  text-align: center;
+  margin-top: rem(24);
+  padding: 0 rem(20);
+}
+
+.p-tab-content__label {
+  background-color: $black;
+  color: $white;
+  padding: rem(8) rem(20);
+  position: absolute;
+  top: 0;
+  right: 0;
+}

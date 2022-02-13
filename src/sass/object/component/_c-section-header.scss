@@ -1,0 +1,49 @@
+@use 'global' as *;
+
+
+.c-section-header {
+  @include mq(md) {
+    position: relative;
+    max-width: rem(1099);
+    margin: auto;
+  }
+}
+
+.c-section-header__engtitle {
+  font-family: $english-family;
+  color: rgba($color: $yellow, $alpha: 0.2);
+  font-weight: $normal;
+  font-size: rem(50);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
+  @include mq(md) {
+    font-size: rem(110);
+    position: absolute;
+    top: rem(-30);
+  }
+}
+
+.c-section-header__engtitle--right {
+  @include mq(md) {
+    right: 0;
+  }
+}
+
+.c-section-header__engtitle--contact {
+  @include mq(md) {
+    top: rem(-70);
+  }
+}
+
+.c-section-header__jatitle {
+  font-size: rem(20);
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: center;
+  margin-top: rem(-8);
+  @include mq(md) {
+    font-size: rem(30);
+    margin-top: 0;
+  }
+}

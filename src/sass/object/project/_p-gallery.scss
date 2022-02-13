@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.p-gallery {
+  width: 100%;
+  position: relative;
+}
+
+
+
+.p-gallery::before {
+  content: "";
+  padding-top: 66.9333333%; //(285/375*100%)ページネーションを含めてみた
+  display: block;
+  @include mq(md) {
+    padding-top: 53.375%;
+  }
+}
+
+.p-gallery__wrapper {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: top;
+}
+
+
+
+.p-gallery__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+/* 前ページ、次ページボタン共通のスタイル */
+.swiper-button-prev,
+.swiper-button-next {
+	background-image: none; /* デフォルトのボタン画像を消す */
+	width: rem(50); /* ボタンの幅 */
+	height: rem(50); /* ボタンの高さ */
+  background-color: $black;
+  border-radius: 50%;
+	// margin-top: rem(-43); /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+}
+/* 前ページボタンのスタイル */
+.swiper-button-prev:before {
+	content: "";
+	border-top: 3px solid #FFEA2E;
+	border-right: 3px solid #FFEA2E;
+  width: rem(18);
+  height: rem(18);
+  transform: rotate(-135deg);
+  margin-left: rem(5);
+}
+/* 次ページボタンのスタイル */
+.swiper-button-next:before {
+  content: "";
+	border-top: 3px solid #FFEA2E;
+	border-right: 3px solid #FFEA2E;
+  width: rem(18);
+  height: rem(18);
+  transform: rotate(45deg);
+  margin-right: rem(5);
+}

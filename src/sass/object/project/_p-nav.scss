@@ -1,0 +1,103 @@
+@use "global" as *;
+
+
+.p-nav {
+  position: fixed;
+  top: 0;
+  left: 120%;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  // transition: all .3s;
+  @include mq(md) {
+    left: 0;
+    background-color: transparent;
+    height: inherit;
+  }
+}
+
+.p-nav.open {
+  left: 0;
+}
+
+.p-nav__items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  @include mq(md) {
+    height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.p-nav__item{
+  letter-spacing: 2px;
+  text-align: center;
+  @include mq(md) {
+    height: inherit;
+  }
+}
+
+.p-nav__item a {
+  display: block;
+  width: 100%;
+  padding: rem(16);
+  @include mq(md) {
+    height: inherit;
+    padding: 0 rem(16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: rem(6);//擬似要素分
+  }
+}
+
+
+.p-nav__item a:hover::after {
+  @include mq(md) {
+    opacity: 1;
+    
+  }
+}
+
+.p-nav__item a::after {
+  @include mq(md) {
+    content: "";
+    border-bottom: 1px solid $yellow;
+    width: 85%;
+    height: rem(1);
+    opacity: 0;
+    padding-top: rem(5);
+  }
+}
+
+.p-nav__item--contact a {
+  @include mq(md) {
+    padding: 0 rem(32);
+    background-color: #fff;
+    color: $gray;
+    transition: background-color 0.3s;
+  }
+}
+
+.p-nav__item--contact a:hover {
+  @include mq(md) {
+    background-color: $gray;
+    color: $white;
+    transition: background-color 0.3s;
+  }
+}
+
+.p-nav__item--contact a::after {
+  @include mq(md) {
+    content: none;
+  }
+}

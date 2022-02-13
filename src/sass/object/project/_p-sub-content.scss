@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.p-sub-content__title {
+  display: block;
+  text-align: center;
+  font-weight: $normal;
+  font-size: rem(20);
+  letter-spacing: 2px;
+}
+
+.p-sub-content__text {
+  letter-spacing: 2px;
+  margin-top: rem(24);
+  @include mq(md){
+    text-align: center;
+  }
+}
+
+.p-sub-content__items {
+  margin-top: rem(80);
+}
