@@ -19,8 +19,18 @@
   }
 }
 .p-news__contents--center {
+  max-width: rem(600);
+  width: 100%;
+  margin: auto;
   @include mq(md) {
     justify-content: center;
+    max-width: initial;
+  }
+}
+
+.p-news__contents--center + .p-news__contents--center {
+  @include mq(md){
+    margin-top: rem(32);
   }
 }
 

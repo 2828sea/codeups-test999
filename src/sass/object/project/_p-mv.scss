@@ -5,6 +5,17 @@
   height: 100vh;
   position: relative;
 }
+
+.p-mv::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  z-index: 1;
+}
 .p-mv__img {
   background-image: url(../images/common/mv-sp.jpg);
   background-size: cover;
@@ -12,7 +23,7 @@
   background-repeat: no-repeat;
   height: 100%;
   @include mq(md) {
-    background-image: url(../images/common/mv1-pc.jpg);
+    background-image: url(../images/common/mv2-pc.jpg);
   }
 }
 .p-mv__img2 {
@@ -22,7 +33,7 @@
   background-repeat: no-repeat;
   height: 100%;
   @include mq(md) {
-    background-image: url(../images/common/mv2-pc.jpg);
+    background-image: url(../images/common/mv1-pc.jpg);
   }
 }
 .p-mv__img3 {

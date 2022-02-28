@@ -1,26 +1,29 @@
 @use "global" as *;
 
-.p-line {
-  position: relative;
-}
+// .p-line {
+//   position: relative;
+// }
 
-.p-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(../images/common/line.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: calc(375 / 375 * 100vw);
-  height: calc(2113.26 / 375 * 100vw);
-  z-index: -1;
-  @include mq(md) {
-    background-image: url(../images/common/line-test-pc.png);
-    // width: calc(1211.98 / 1280 * 100vw);
-    width: calc(1275.62 / 1280 * 100vw);
-    height: calc(2548 / 1280 * 100vw);
-    top: rem(-110);
-  }
-}
+// .p-line::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   background-image: url(../images/common/line.png);
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: center;
+//   width: calc(375 / 375 * 100vw);
+//   height: calc(2113.26 / 375 * 100vw);
+//   z-index: -1;
+//   @include mq(md) {
+//     background-image: url(../images/common/line-test-pc.png);
+//     // width: calc(1211.98 / 1280 * 100vw);
+//     width: calc(1275.62 / 1280 * 100vw);
+//     height: calc(2548 / 1280 * 100vw);
+//     top: rem(-110);
+//   }
+// }
+
+
+

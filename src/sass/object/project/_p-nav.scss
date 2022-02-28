@@ -79,7 +79,7 @@
   }
 }
 
-.p-nav__item--contact a {
+.p-nav__item:last-child a {
   @include mq(md) {
     padding: 0 rem(32);
     background-color: #fff;
@@ -88,7 +88,7 @@
   }
 }
 
-.p-nav__item--contact a:hover {
+.p-nav__item:last-child a:hover {
   @include mq(md) {
     background-color: $gray;
     color: $white;
@@ -96,7 +96,7 @@
   }
 }
 
-.p-nav__item--contact a::after {
+.p-nav__item:last-child a::after {
   @include mq(md) {
     content: none;
   }

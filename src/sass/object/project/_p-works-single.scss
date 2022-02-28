@@ -52,4 +52,7 @@
   margin-top: rem(104);
   padding-right: $padding-sp;
   padding-left: $padding-sp;
+  @include mq(md){
+    padding: 0;
+  }
 }

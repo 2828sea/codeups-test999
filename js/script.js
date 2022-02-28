@@ -105,22 +105,29 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
 
-  $(function() {
-    let tabs = $(".p-tab-wrapper__item"); // tabのクラスを全て取得し、変数tabsに配列で定義
-    $(".p-tab-wrapper__item").on("click", function() { // tabをクリックしたらイベント発火
-      $(".current").removeClass("current"); // activeクラスを消す
-      $(this).addClass("current"); // クリックした箇所にactiveクラスを追加
-      const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
-      $(".p-tab-contents").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
-    })
-  })
+  //(jQuery)で特定のliタグにだけclass「current」をつける
+  href = location.href;
+
+  var links = jQuery(".p-tab-wrapper__items > .p-tab-wrapper__item > a");
+  
+  links.each(function (index, value) {
+    if (value.href == href) {
+      jQuery(".p-tab-wrapper__items").children(".p-tab-wrapper__item").eq(index).addClass("current");
+    }
+  });
+
+  $('.p-tab-wrapper__item').click(function(){
+		$('.current').removeClass('current');
+		$(this).addClass('current');
+	});
 
     //メイン
-  var slider = new Swiper ('.p-gallery', {
+    var smartImage = $(".p-gallery__wrapper > div").length;
+    var slider = new Swiper ('.p-gallery', {
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
-    loopedSlides: 6, //スライドの枚数と同じ値を指定
+    loopedSlides: smartImage, //スライドの枚数と同じ値を指定
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -136,8 +143,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     slideToClickedSlide: true,
   });
 
-//4系～
-//メインとサムネイルを紐づける
-slider.controller.control = thumbs;
-thumbs.controller.control = slider;
+      //4系～
+      //メインとサムネイルを紐づける
+      slider.controller.control = thumbs;
+      thumbs.controller.control = slider;
+
 });
+
+

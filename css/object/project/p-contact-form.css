@@ -1,0 +1,125 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.u-desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .u-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-mobile {
+    display: none;
+  }
+}
+
+/*ContactForm7カスタマイズ*/
+table.CF7_table {
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid #e5e5e5;
+}
+
+table.CF7_table tr {
+  border-top: 1px solid #e5e5e5;
+}
+
+.single .entry-content table.CF7_table,
+.page .entry-content table.CF7_table {
+  display: table;
+}
+
+/*入力欄*/
+.CF7_table input, .CF7_table textarea {
+  border: 1px solid #d8d8d8;
+}
+
+.CF7_table ::-webkit-input-placeholder {
+  color: #797979;
+}
+
+.CF7_table ::-moz-placeholder {
+  color: #797979;
+}
+
+.CF7_table ::-ms-input-placeholder {
+  color: #797979;
+}
+
+.CF7_table ::placeholder {
+  color: #797979;
+}
+
+/*「必須」文字*/
+.CF7_req {
+  font-size: 0.9em;
+  padding: 5px;
+  background: #f79034;
+  /*オレンジ*/
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 1em;
+}
+
+/*「任意」文字*/
+.CF7_unreq {
+  font-size: 0.9em;
+  padding: 5px;
+  background: #bdbdbd;
+  /*グレー*/
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 1em;
+}
+
+/* タイトル列 */
+@media screen and (min-width: 768px) {
+  .CF7_table th {
+    width: 30%;
+    /*横幅*/
+    background-color: #ebedf5;
+    /*ブルーグレー*/
+  }
+}
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  table.CF7_table {
+    width: 95%;
+  }
+
+  .CF7_table tr, .CF7_table td, .CF7_table th {
+    display: block;
+    width: 100%;
+    line-height: 2.5em;
+  }
+
+  .CF7_table th {
+    background-color: #ebedf5;
+  }
+}
+/* 「送信する」ボタン */
+.wpcf7 input.wpcf7-submit {
+  background-color: #f79034;
+  /* オレンジ*/
+  border: 0;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.CF7_btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wpcf7-spinner {
+  width: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=p-contact-form.css.map */

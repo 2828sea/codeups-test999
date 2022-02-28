@@ -17,6 +17,7 @@
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: center;
+  position: relative;
   @include mq(md) {
     font-size: rem(110);
     position: absolute;

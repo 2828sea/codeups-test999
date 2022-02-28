@@ -36,30 +36,59 @@
   <?php wp_head(); ?>
 </head>
 
-<header class="l-header p-header js-header">
-  <div class="p-header__inner">
-    <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo js-header__logo">
-      <img src="<?php echo esc_url(get_theme_file_uri('./images/common/logo.svg')); ?>" alt="codeups">
-    </a>
-    <nav class="p-nav js-nav">
-      <ul class="p-nav__items">
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/')) ?>">トップ</a></li>
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/news')) ?>">お知らせ</a></li>
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/content')) ?>">事業内容</a></li>
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/works')) ?>">制作実績</a></li>
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/overview')) ?>">企業概要</a></li>
-        <li class="p-nav__item"><a href="<?php echo esc_url(home_url('/blog')) ?>">ブログ</a></li>
-        <li class="p-nav__item p-nav__item--contact"><a href="<?php echo esc_url(home_url('/contact')) ?>">お問い合わせ</a></li>
-      </ul>
-      <!-- /.nav__list -->
-    </nav>
-    <div class="c-burger-menu">
-      <div class="c-burger-btn js-drawer-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+<body>
+  <?php wp_body_open(); ?>
+
+  <?php
+  $home = esc_url(home_url('/'));
+  $news = esc_url(home_url('/news'));
+  $content = esc_url(home_url('/content'));
+  $works = esc_url(home_url('/works'));
+  $overview = esc_url(home_url('/overview'));
+  $blog = esc_url(home_url('/blog'));
+  $contact = esc_url(home_url('/contact'));
+  ?>
+
+
+  <header class="l-header p-header js-header">
+    <div class="p-header__inner">
+      <a href="<?php echo $home ?>" class="p-header__logo js-header__logo">
+        <img src="<?php echo esc_url(get_theme_file_uri('./images/common/logo.svg')); ?>" alt="codeups">
+      </a>
+
+
+      <?php
+      $defaults = array(
+        'theme_location'  => 'main',
+        'container'       => 'nav',
+        'container_class' => 'p-nav js-nav',
+        'menu_class'      => 'p-nav__items',
+        'add_li_class'    => 'p-nav__item' // liタグへclass追加
+        // 'add_a_class'     => 'nav-link text-white' // aタグへclass追加
+      );
+      wp_nav_menu($defaults);
+      ?>
+
+      <!-- 
+        <nav class="p-nav js-nav">
+        <ul class="p-nav__items">
+          <li class="p-nav__item"><a href="<?php echo $home ?>">トップ</a></li>
+          <li class="p-nav__item"><a href="<?php echo $news ?>">お知らせ</a></li>
+          <li class="p-nav__item"><a href="<?php echo $content ?>">事業内容</a></li>
+          <li class="p-nav__item"><a href="<?php echo $works ?>">制作実績</a></li>
+          <li class="p-nav__item"><a href="<?php echo $overview ?>">企業概要</a></li>
+          <li class="p-nav__item"><a href="<?php echo $blog ?>">ブログ</a></li>
+          <li class="p-nav__item p-nav__item--contact"><a href="<?php echo $contact ?>">お問い合わせ</a></li>
+        </ul>
+        /.nav__list
+      </nav> -->
+      <div class="c-burger-menu">
+        <div class="c-burger-btn js-drawer-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- /.header__inner -->
-</header>
+    <!-- /.header__inner -->
+  </header>

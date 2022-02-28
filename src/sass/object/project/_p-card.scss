@@ -14,6 +14,7 @@
   position: absolute;
   top: rem(-16);
   left: rem(-15);
+  z-index: 9;
   @include mq(md){
     top: rem(-20);
   }
@@ -94,6 +95,12 @@
     transition: background-color 0.3s;
   }
 }
+.p-card:hover .p-card__date {
+  @include mq(md){
+    color: $white;
+    transition: background-color 0.3s;
+  }
+}
 
 .p-card + 
 .p-card {
@@ -117,15 +124,15 @@
 }
 
 .p-card__img {
-  // padding-top: 66.571429%;//233 / 350 *100%
-  // position: relative;
-  aspect-ratio: 350 / 233;
+  padding-top: 66.571429%;//233 / 350 *100%
+  position: relative;
+  // aspect-ratio: 350 / 233;
 }
 .p-card__img img {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
