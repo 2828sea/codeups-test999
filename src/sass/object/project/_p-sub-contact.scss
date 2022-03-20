@@ -23,7 +23,7 @@
   @include mq(md){
     flex-direction: row;
     position: relative;
-    left: -11%;//head22%の半分を寄せる
+    left: -13%;//head22%の半分を寄せる
   }
 }
 
@@ -109,6 +109,7 @@
   background-color: #fff;
   font-size: rem(20);
   padding: rem(7) 0;
+  color: #333;
   @include mq(md){
     max-width: rem(360);
     width: 100%;
@@ -120,6 +121,7 @@
 }
 .wpcf7 .wpcf7-not-valid {
   background: pink;
+  margin-bottom: rem(-6);
 }
 .wpcf7 form .wpcf7-response-output {
   display: none;

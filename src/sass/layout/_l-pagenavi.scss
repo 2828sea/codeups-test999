@@ -31,8 +31,8 @@
 }
 .wp-pagenavi a:hover{
 	color: #FFF;
-	background-color: #FF0037;
-	border-color: #FF0037;
+	background-color: $yellow;
+	border-color: $yellow;
     }
 .wp-pagenavi span.current{
 	color:$gray;

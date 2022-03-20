@@ -14,7 +14,7 @@
       <h2 class="p-sub-content__title"><?php the_title(); ?></h2>
       <p class="p-sub-content__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
       <div class="p-sub-content__items p-groups">
-        <div class="p-groups__item p-group">
+        <div class="p-groups__item p-group" id="content2">
           <div class="p-group__img">
             <!-- <img src="<?php echo esc_url(get_theme_file_uri('./images/common/sub-content-img1-sp.jpg')); ?>" alt=""> -->
             <img src="<?php the_field('content-img1'); ?>" alt="<?php the_title(); ?>">
@@ -24,7 +24,7 @@
             <p class="p-group__text"><?php the_field('content-text1'); ?></p>
           </div>
         </div>
-        <div class="p-groups__item p-group">
+        <div class="p-groups__item p-group" id="content3">
           <div class="p-group__img">
             <!-- <img src="<?php echo esc_url(get_theme_file_uri('./images/common/sub-content-img2-sp.jpg')); ?>" alt=""> -->
             <img src="<?php the_field('content-img2'); ?>" alt="<?php the_title(); ?>">
@@ -34,7 +34,7 @@
             <p class="p-group__text"><?php the_field('content-text2'); ?></p>
           </div>
         </div>
-        <div class="p-groups__item p-group">
+        <div class="p-groups__item p-group" id="content4">
           <div class="p-group__img">
             <!-- <img src="<?php echo esc_url(get_theme_file_uri('./images/common/sub-content-img3-sp.jpg')); ?>" alt=""> -->
             <img src="<?php the_field('content-img3'); ?>" alt="<?php the_title(); ?>">

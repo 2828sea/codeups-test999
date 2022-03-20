@@ -11,8 +11,8 @@ $contact = esc_url(home_url('/contact'));
 ?>
 
 <main>
-  <div class="swiper l-mv p-mv">
-    <div class="swiper-wrapper p-mv__wrapper">
+  <div class="l-mv p-mv swiper">
+    <div class="p-mv__wrapper swiper-wrapper">
       <div class="swiper-slide">
         <div class="p-mv__img"></div>
       </div>
@@ -71,23 +71,23 @@ $contact = esc_url(home_url('/contact'));
     </div>
     <div class="p-content__box">
       <div class="p-content__item">
-        <div class="p-content__img p-content__img1">
+        <div class="p-content__img p-content--img1">
           <a href="<?php echo esc_url(home_url('/content')); ?>" class="p-content__text"><span>経営理念ページへ</span></a>
         </div>
       </div>
       <div class="p-content__item">
-        <div class="p-content__img p-content__img2">
-          <a href="<?php echo $content ?>" class="p-content__text"><span>理念1へ</span></a>
+        <div class="p-content__img p-content--img2">
+          <a href="<?php echo esc_url(home_url('/content')); ?>/content#content1" class="p-content__text" id="content2"><span>理念1へ</span></a>
         </div>
       </div>
       <div class="p-content__item">
-        <div class="p-content__img p-content__img3">
-          <a href="<?php echo $content ?>" class="p-content__text"><span>理念2へ</span></a>
+        <div class="p-content__img p-content--img3">
+          <a href="<?php echo $content ?>/content#content2" class="p-content__text" id="content3"><span>理念2へ</span></a>
         </div>
       </div>
       <div class="p-content__item">
-        <div class="p-content__img p-content__img4">
-          <a href="<?php echo $content ?>" class="p-content__text"><span>理念3へ</span></a>
+        <div class="p-content__img p-content--img4">
+          <a href="<?php echo $content ?>/content#content3" class="p-content__text" id="content4"><span>理念3へ</span></a>
         </div>
       </div>
       <!-- /.p-content__box -->
@@ -101,24 +101,24 @@ $contact = esc_url(home_url('/contact'));
     </div>
     <div class="p-works__wrapper">
       <div class="p-works__inner">
-        <div class="p-works-slider swiper">
+        <div class="p-works__slider p-works-slider swiper">
           <div class="p-works-slider__wrapper swiper-wrapper">
-            <div class="p-works__img swiper-slide">
+            <div class="p-works-slider__img swiper-slide">
               <img src="<?php echo esc_url(get_theme_file_uri('./images/common/works-img3.jpg')); ?>" alt="トップ画像１">
             </div>
-            <div class="p-works__img swiper-slide">
+            <div class="p-works-slider__img swiper-slide">
               <img src="<?php echo esc_url(get_theme_file_uri('./images/common/works-img1.jpg')); ?>" alt="トップ画像2">
             </div>
-            <div class="p-works__img swiper-slide">
+            <div class="p-works-slider__img swiper-slide">
               <img src="<?php echo esc_url(get_theme_file_uri('./images/common/works-img2.jpg')); ?>" alt="トップ画像3">
             </div>
           </div>
           <div class="p-works-pagination swiper-pagination"></div>
         </div>
-        <div class="p-works__contents">
+        <div class="p-works__contents p-works-contents">
           <div class="p-works-contents__title">メインタイトルが入ります</div>
           <div class="p-works-contents__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
-          <div class="p-works__button">
+          <div class="p-works-contents__button">
             <a href="<?php echo get_post_type_archive_link('works-post') ?>" class="c-button c-button--white"><span>詳しく見る</span></a>
           </div>
         </div>
@@ -140,10 +140,10 @@ $contact = esc_url(home_url('/contact'));
         <div class="p-overview__img swiper-slide">
           <img src="<?php echo esc_url(get_theme_file_uri('./images/common/overview-img.jpg')); ?>" alt="トップ画像１">
         </div>
-        <div class="p-overview__contents">
+        <div class="p-overview__contents p-overview-contents">
           <div class="p-overview-contents__title">メインタイトルが入ります</div>
           <div class="p-overview-contents__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
-          <div class="p-overview__button">
+          <div class="p-overview-contents__button">
             <a href="<?php echo $overview ?>" class="c-button c-button--white"><span>詳しく見る</span></a>
           </div>
         </div>

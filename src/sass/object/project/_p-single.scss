@@ -53,10 +53,12 @@
 .p-single__box {
   width: 100vw;
   margin: rem(16) calc(50% - 50vw) 0;
+  padding: 0 rem(20);
   @include mq(md){
     margin-left: auto;
     margin-right: auto;
     width: auto;
+    padding: 0;
   }
 }
 
@@ -93,6 +95,10 @@
 
 .p-single__cards {
   margin-top: rem(32);
+  padding: 0 rem(20);
+  @include mq(md){
+    padding: 0;
+  }
 }
 
 .p-single__body p {

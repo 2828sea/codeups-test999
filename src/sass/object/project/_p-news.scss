@@ -14,8 +14,16 @@
 .p-news__contents {
   @include mq(md) {
     display: flex;
+    transition: all 0.3s;
     // flex-direction: column;
     // justify-content: center;
+  }
+}
+
+.p-news__contents:hover .p-news__text {
+  @include mq(md){
+    color: $yellow;
+    transition: hover 0.3s;
   }
 }
 .p-news__contents--center {

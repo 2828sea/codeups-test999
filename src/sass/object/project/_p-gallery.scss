@@ -7,7 +7,32 @@
 
 
 
-.p-gallery::before {
+// .p-gallery::before {
+//   content: "";
+//   padding-top: 66.9333333%; //(285/375*100%)ページネーションを含めてみた
+//   display: block;
+//   @include mq(md) {
+//     padding-top: 53.375%;
+//   }
+// }
+
+.p-gallery__wrapper {
+  // position: absolute;
+  // top: 0%;
+  // left: 0%;
+  // object-fit: cover;
+  // width: 100%;
+  // height: auto;
+  // object-position: top;
+  height: auto;
+}
+
+.p-gallery__slide {
+  width: 100%;
+  position: relative;
+}
+
+.p-gallery__slide::before {
   content: "";
   padding-top: 66.9333333%; //(285/375*100%)ページネーションを含めてみた
   display: block;
@@ -16,23 +41,14 @@
   }
 }
 
-.p-gallery__wrapper {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  object-position: top;
-}
-
-
-
 .p-gallery__slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }
 
 
@@ -45,7 +61,12 @@
 	height: rem(50); /* ボタンの高さ */
   background-color: $black;
   border-radius: 50%;
-	// margin-top: rem(-43); /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+  top: 50%;
+	margin-top: rem(-100); /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+  @include mq(md){
+    top: rem(230);
+    margin-top: 0;
+  }
 }
 /* 前ページボタンのスタイル */
 .swiper-button-prev:before {

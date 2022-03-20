@@ -310,8 +310,8 @@ select::-ms-expand {
 
 .wp-pagenavi a:hover {
   color: #FFF;
-  background-color: #FF0037;
-  border-color: #FF0037;
+  background-color: #F9F871;
+  border-color: #F9F871;
 }
 
 .wp-pagenavi span.current {
@@ -1044,19 +1044,19 @@ select::-ms-expand {
   height: 100%;
 }
 
-.p-content__img1 {
+.p-content--img1 {
   background-image: url(../images/common/content-img1.jpg);
 }
 
-.p-content__img2 {
+.p-content--img2 {
   background-image: url(../images/common/content-img2.jpg);
 }
 
-.p-content__img3 {
+.p-content--img3 {
   background-image: url(../images/common/content-img3.jpg);
 }
 
-.p-content__img4 {
+.p-content--img4 {
   background-image: url(../images/common/content-img4.jpg);
 }
 
@@ -1281,27 +1281,24 @@ select::-ms-expand {
   position: relative;
 }
 
-.p-gallery::before {
+.p-gallery__wrapper {
+  height: auto;
+}
+
+.p-gallery__slide {
+  width: 100%;
+  position: relative;
+}
+
+.p-gallery__slide::before {
   content: "";
   padding-top: 66.9333333%;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .p-gallery::before {
+  .p-gallery__slide::before {
     padding-top: 53.375%;
   }
-}
-
-.p-gallery__wrapper {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  -o-object-position: top;
-     object-position: top;
 }
 
 .p-gallery__slide img {
@@ -1311,6 +1308,9 @@ select::-ms-expand {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }
 
 /* 前ページ、次ページボタン共通のスタイル */
@@ -1326,6 +1326,17 @@ select::-ms-expand {
   /* ボタンの高さ */
   background-color: #111;
   border-radius: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-top: -6.25rem;
+  /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+}
+@media screen and (min-width: 768px) {
+  .swiper-button-prev,
+.swiper-button-next {
+    top: 14.375rem;
+    margin-top: 0;
+  }
 }
 
 /* 前ページボタンのスタイル */
@@ -1821,6 +1832,16 @@ select::-ms-expand {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .p-news__contents:hover .p-news__text {
+    color: #F9F871;
+    -webkit-transition: hover 0.3s;
+    transition: hover 0.3s;
   }
 }
 
@@ -2045,13 +2066,13 @@ select::-ms-expand {
   }
 }
 
-.p-overview__button {
+.p-overview-contents__button {
   margin-top: 23px;
   margin-top: 1.4375rem;
   letter-spacing: 2px;
 }
 @media screen and (min-width: 768px) {
-  .p-overview__button {
+  .p-overview-contents__button {
     margin-top: 3.125rem;
     max-width: 22.5rem;
   }
@@ -2115,6 +2136,34 @@ select::-ms-expand {
     -webkit-transform: all 0.3s;
             transform: all 0.3s;
   }
+}
+
+.p-pagenavi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.p-pagenavi__prev a,
+.p-pagenavi__archive a,
+.p-pagenavi__next a {
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 0 20px;
+  padding: 0 1.25rem;
+}
+
+.p-pagenavi__archive a {
+  margin-left: 48px;
+  margin-left: 3rem;
+}
+
+.p-pagenavi__next a {
+  margin-left: 48px;
+  margin-left: 3rem;
 }
 
 .p-point__title {
@@ -2208,12 +2257,15 @@ select::-ms-expand {
 .p-single__box {
   width: 100vw;
   margin: 1rem calc(50% - 50vw) 0;
+  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .p-single__box {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+    padding: 0;
   }
 }
 
@@ -2258,6 +2310,13 @@ select::-ms-expand {
 .p-single__cards {
   margin-top: 32px;
   margin-top: 2rem;
+  padding: 0 20px;
+  padding: 0 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .p-single__cards {
+    padding: 0;
+  }
 }
 
 .p-single__body p {
@@ -2299,7 +2358,7 @@ select::-ms-expand {
         -ms-flex-direction: row;
             flex-direction: row;
     position: relative;
-    left: -11%;
+    left: -13%;
   }
 }
 
@@ -2433,6 +2492,7 @@ select::-ms-expand {
   font-size: 1.25rem;
   padding: 7px 0;
   padding: 0.4375rem 0;
+  color: #333;
 }
 @media screen and (min-width: 768px) {
   .p-sub-contact__submit {
@@ -2447,6 +2507,8 @@ select::-ms-expand {
 
 .wpcf7 .wpcf7-not-valid {
   background: pink;
+  margin-bottom: -6px;
+  margin-bottom: -0.375rem;
 }
 
 .wpcf7 form .wpcf7-response-output {
@@ -2759,6 +2821,10 @@ form {
   width: 100%;
 }
 
+.p-thumbs__wrapper {
+  height: auto;
+}
+
 .p-thumbs__slide::before {
   content: "";
   padding-top: 100%;
@@ -2917,23 +2983,23 @@ form {
   height: auto;
 }
 
-.p-works__img {
+.p-works-slider__img {
   width: 100%;
   position: relative;
 }
 
-.p-works__img::before {
+.p-works-slider__img::before {
   content: "";
   padding-top: 69.6%;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .p-works__img::before {
+  .p-works-slider__img::before {
     padding-top: 69.8384201%;
   }
 }
 
-.p-works__img img {
+.p-works-slider__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -2999,13 +3065,13 @@ form {
   }
 }
 
-.p-works__button {
+.p-works-contents__button {
   margin-top: 24px;
   margin-top: 1.5rem;
   letter-spacing: 2px;
 }
 @media screen and (min-width: 768px) {
-  .p-works__button {
+  .p-works-contents__button {
     margin-top: 3.375rem;
     max-width: 22.5rem;
   }

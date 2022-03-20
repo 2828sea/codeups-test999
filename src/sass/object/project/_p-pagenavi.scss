@@ -1,0 +1,25 @@
+@use 'global' as *;
+
+.p-pagenavi {
+  display: flex;
+  justify-content: center;
+}
+
+.p-pagenavi__prev a,
+.p-pagenavi__archive a,
+.p-pagenavi__next a {
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 0 rem(20);
+}
+
+.p-pagenavi__prev {
+  
+  
+}
+.p-pagenavi__archive a {
+  margin-left: rem(48);
+}
+.p-pagenavi__next a {
+  margin-left: rem(48);
+} 

@@ -53,15 +53,15 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
 
-  $(document).on('click', 'a[href*="#"]', function () {
-    let time = 400;
-    let header = $('header').innerHeight();
-    let target = $(this.hash);
-    if (!target.length) return;
-    let targetY = target.offset().top - header;
-    $('html,body').animate({ scrollTop: targetY }, time, 'swing');
-    return false;
-  });
+  // $(document).on('click', 'a[href*="#"]', function () {
+  //   let time = 400;
+  //   let header = $('header').innerHeight();
+  //   let target = $(this.hash);
+  //   if (!target.length) return;
+  //   let targetY = target.offset().top - header;
+  //   $('html,body').animate({ scrollTop: targetY }, time, 'swing');
+  //   return false;
+  // });
 
 
   // TOPスライダー
@@ -95,14 +95,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
   //MV以下ヘッダー
-  const target = $('.js-news').offset();
+  // mainタグ直下のdivもしくは最初のdivの高さを取得
+  var target = $("main>div").height();
+  var target1 = $("main div:first").height();
   $(window).scroll(function() {
-    if($(this).scrollTop() > target.top) {
+    if($(this).scrollTop() > target , $(this).scrollTop() > target1) {
       $('.js-header').addClass('p-header--color');
     } else {
       $('.js-header').removeClass('p-header--color');
     }
   });
+
+
+  // var target = $("main>div").height();
+  // console.log(target);
+
+
+
 
 
   //(jQuery)で特定のliタグにだけclass「current」をつける

@@ -23,6 +23,20 @@
       </div>
 
     </div>
+
+    <div class="l-pagenavi p-pagenavi">
+      <div class="p-pagenavi__prev">
+        <?php previous_post_link('%link', 'PREV'); ?>
+      </div>
+      <div class="p-pagenavi__archive">
+        <a href="<?php echo get_post_type_archive_link('works-post') ?>">一覧</a>
+      </div>
+      <div class="p-pagenavi__next">
+        <div class="next"><?php next_post_link('%link', 'NEXT'); ?>
+        </div>
+      </div>
+    </div>
+
     <div class="l-inner">
 
       <div class="p-single__button">

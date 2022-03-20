@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.p-thumbs__wrapper {
+  height: auto;
+}
+
 .p-thumbs__slide::before {
   content: "";
   padding-top: 100%;
