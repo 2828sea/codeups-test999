@@ -10,6 +10,7 @@
   height: 100vh;
   background-color: #111;
   // transition: all .3s;
+  overflow: scroll;
   @include mq(md) {
     left: 0;
     background-color: transparent;
